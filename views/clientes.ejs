@@ -1,0 +1,42 @@
+<%- include('../views/partials/header') %>
+<!--  -->
+<%- include('../views/partials/navbar') %>
+
+<h2 id="titulo" class="text-info"><br /><b>Clientes</b></h2>
+<div class="bg-info mx-auto my-5" style="height: 3px; width: 90%"></div>
+
+
+<div class="container">
+    <div class="card shadow-lg p-3 mx-5 bg-white rounded">
+        <div class="card-header bg-dark text-light">
+            <h1>Clientes</h1>
+        </div>
+        <div class="card-body">
+            <table class="w-100">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% clientes.forEach(cliente=> { %>
+                    <tr>
+                        <td><img src="imgs/avatar.png" width="30px" /></td>
+                        <td><%= cliente.id %></td>
+                        <td><%= cliente.nome %></td>
+                        <td><%= cliente.email %></td>
+                        <td><%= cliente.telefone %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+
+<%- include('../views/partials/footer') %>

@@ -1,0 +1,47 @@
+<%- include('../views/partials/header') %>
+<!--  -->
+<%- include('../views/partials/navbar') %>
+
+<h2 id="titulo" class="text-info"><br /><b>Pedidos</b></h2>
+<div class="bg-info mx-auto my-5" style="height: 3px; width: 90%"></div>
+
+<div class="container">
+    <div class="card shadow-lg p-3 mx-5 bg-white rounded">
+        <div class="card-header bg-dark text-light bordered-4">
+            <h1>Pedidos</h1>
+        </div>
+        <div class="card-body">
+            <table class="w-100">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Id</th>
+                        <th>Cliente</th>
+                        <th>Quantidade</th>
+                        <th>Data do Pedido</th>
+                        <th>Prazo do Envio</th>
+                        <th>Prazo da Entrega</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% pedidos.forEach(pedido => { %>
+                    <tr>
+                        <td>
+                            <img src="imgs/order.png" width="30px" />
+                        </td>
+                        <th scope="row"><%= pedido.id %></th>
+                        <td><%= pedido.cliente %></td>
+                        <td><%= pedido.qntdProdutos %></td>
+                        <td><%= pedido.dataPedido %></td>
+                        <td><%= pedido.prazoEnvio %></td>
+                        <td><%= pedido.prazoEntrega %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+
+<%- include('../views/partials/footer') %>
